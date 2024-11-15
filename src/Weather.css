@@ -1,0 +1,10 @@
+.Weather {
+  border: 2px solid black;
+  margin: 80px 60px 40px 60px;
+  padding: 30px;
+}
+.Weather .City {
+  padding-top: 30px;
+  font-size: 35px;
+  line-height: 20px;
+}
