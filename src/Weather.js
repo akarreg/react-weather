@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import FormatDate from "./FormatDate";
 export default function Weather(props) {
   const [WeatherData, setWeatherData] = useState({ ready: false });
 
@@ -10,6 +11,7 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
+      date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       visibility: response.data.visibility,
       humidity: response.data.main.humidity,
@@ -25,21 +27,29 @@ export default function Weather(props) {
           <input
             className="col-9 Search"
             type="search "
-            placeholder="Enter city....."
+            y
+            placeholder="Enter city...."
           />
           <input className="col-3 Submit" type="Submit" />
         </form>
 
         <main>
           <div>
-            <h1 className="City">City name</h1>
-            <h5 className="text-capitalize Description">
-              {WeatherData.description}
-            </h5>
+            <h1 className=" text-capitalize City">{WeatherData.city}</h1>
+            <ul>
+              <li className="  text-capitalize TextDate">
+                <FormatDate date={WeatherData.date} />
+              </li>
+              <li className="text-capitalize Description">
+                {" "}
+                {WeatherData.description}
+              </li>
+            </ul>
+
             <div className="row">
               <div className="col">
                 emoji
-                <span className="Temperature">
+                <span className=" Temperature">
                   {" "}
                   {Math.round(WeatherData.temperature)}
                 </span>
@@ -47,8 +57,10 @@ export default function Weather(props) {
               </div>
 
               <div className="col Leftside">
-                <div className="">Wind:{Math.round(WeatherData.wind)} km/h</div>
-                <div className="">visibility:{WeatherData.visibility} </div>
+                <div className="">
+                  Wind: {Math.round(WeatherData.wind)} km/h
+                </div>
+                <div className="">Visibility:{WeatherData.visibility} </div>
                 <div className="">Humidity:{WeatherData.humidity}%</div>
               </div>
             </div>
