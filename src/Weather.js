@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-export default function Weather() {
-  const [WeatherData, setWeatherData] = useState(null);
-  const [ready, setready] = useState(false);
+export default function Weather(props) {
+  const [WeatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
     console.log(response.data);
 
     setWeatherData({
+      ready: true,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       visibility: response.data.visibility,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
+      city: response.data.name,
     });
-    setready(true);
   }
 
-  if (ready) {
+  if (WeatherData.ready) {
     return (
       <div className="Weather">
         <form className="row">
@@ -46,7 +46,7 @@ export default function Weather() {
                 <span className="Degrees">˚C</span>
               </div>
 
-              <div className="col">
+              <div className="col Leftside">
                 <div className="">Wind:{Math.round(WeatherData.wind)} km/h</div>
                 <div className="">visibility:{WeatherData.visibility} </div>
                 <div className="">Humidity:{WeatherData.humidity}%</div>
@@ -58,8 +58,8 @@ export default function Weather() {
     );
   } else {
     const apiKey = "7059cb165caa3316bff682d263a01b1e";
-    let city = "ondarroa";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultcity}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
 

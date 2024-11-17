@@ -12,3 +12,15 @@
   font-size: 20px;
   line-height: 60px;
 }
+.Weather .Temperature {
+  font-size: 35px;
+  font-weight: 700;
+}
+.Weather .Degrees {
+  font-size: 35px;
+  font-weight: 700;
+}
+.Weather .Leftside {
+  font-weight: 600;
+  line-height: 25px;
+}
