@@ -1,29 +1,35 @@
 .Weather {
   border: 2px solid black;
-  margin: 80px 60px 40px 60px;
-  padding: 30px;
+  margin: 80px 60px 20px 60px;
+  padding: 20px;
+  max-width: 80%;
 }
-
-.Weather .TextDate {
-  font-size: 25px;
-  list-style: none;
-  line-height: 35px;
-  color: rgb(173, 87, 87);
+.Weather .Search {
+  width: 75%;
 }
 .Weather .City {
   padding-top: 30px;
+  padding-bottom: 10px;
   font-size: 35px;
   line-height: 20px;
   list-style: none;
 }
-.Weather .Description {
+.Weather .TextDate {
   font-size: 20px;
+  list-style: none;
+  line-height: 35px;
+  color: rgb(173, 87, 87);
+  margin-left: -30px;
+}
+
+.Weather .Description {
+  font-size: 15px;
   line-height: 20px;
   list-style: none;
   color: rgb(173, 87, 87);
 }
 .Weather .Temperature {
-  font-size: 45px;
+  font-size: 65px;
   font-weight: 700;
 }
 .Weather .Degrees {
@@ -31,7 +37,7 @@
   font-weight: 700;
 }
 .Weather .Leftside {
-  font-weight: 600;
+  font-weight: 800;
   line-height: 25px;
 }
 .Leftside {

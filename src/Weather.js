@@ -19,6 +19,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       city: response.data.name,
+      icon: response.data.weather[0].icon,
     });
   }
   function handleSubmit(event) {
@@ -39,22 +40,16 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-9 Search">
-              <input
-                autoFocus="on"
-                type="search "
-                onChange={handleResponseCity}
-                placeholder="Enter city...."
-              />
-            </div>
-            <div className="col-3 Submit">
-              <input type="Submit" value="Search " />
-            </div>
-          </div>
+          <input
+            className="Search"
+            autoFocus="on"
+            type="search "
+            onChange={handleResponseCity}
+            placeholder="Enter city...."
+          />
+          <input type="Submit" value="Search " />
+          <WeatherInfo data={WeatherData} />
         </form>
-
-        <WeatherInfo data={WeatherData} />
       </div>
     );
   } else {

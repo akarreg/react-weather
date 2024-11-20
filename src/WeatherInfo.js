@@ -1,5 +1,6 @@
 import React from "react";
 import FormatDate from "./FormatDate";
+import weatherIcon from "./weatherIcon";
 
 export default function WeatherIfo(props) {
   return (
@@ -9,7 +10,7 @@ export default function WeatherIfo(props) {
         <li className="  text-capitalize TextDate">
           <FormatDate date={props.data.date} />
         </li>
-        <li className="text-capitalize Description">
+        <li className="text-capitalize Description TextDate">
           {" "}
           {props.data.description}
         </li>
@@ -18,7 +19,9 @@ export default function WeatherIfo(props) {
       <div className="row mt-3">
         <div className="col-6">
           <div className="d-flex">
-            emoji
+            <div>
+              <weatherIcon code={props.data.icon} />
+            </div>
             <span className=" Temperature">
               {" "}
               {Math.round(props.data.temperature)}
