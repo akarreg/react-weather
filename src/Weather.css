@@ -1,11 +1,15 @@
 .Weather {
-  border: 2px solid black;
+  border: 3px dotted;
   margin: 80px 60px 20px 60px;
   padding: 20px;
-  max-width: 80%;
+  margin-top: 30px;
 }
+
 .Weather .Search {
-  width: 75%;
+  width: 85%;
+}
+.Weather .Submit {
+  width: 20%;
 }
 .Weather .City {
   padding-top: 30px;
@@ -32,14 +36,9 @@
   font-size: 65px;
   font-weight: 700;
 }
-.Weather .Degrees {
-  font-size: 35px;
-  font-weight: 700;
-}
+
 .Weather .Leftside {
   font-weight: 800;
   line-height: 25px;
-}
-.Leftside {
   color: rgb(173, 87, 87);
 }

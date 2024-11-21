@@ -1,5 +1,6 @@
 body {
   background-color: whitesmoke;
+  max-width: 1000px;
 }
 .App {
   background-color: rgb(238, 199, 199);

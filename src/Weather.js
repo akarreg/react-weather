@@ -48,7 +48,7 @@ export default function Weather(props) {
             placeholder="Enter city...."
           />
           <input type="Submit" value="Search " />
-          <WeatherInfo data={WeatherData} />
+          <WeatherInfo data={WeatherData} className="Submit" />
         </form>
       </div>
     );

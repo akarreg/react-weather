@@ -1,5 +1,5 @@
 import React from "react";
-export default function FormatDate(props) {
+export default function FormattedDate(props) {
   let days = [
     "Sunday",
     "Monday",
