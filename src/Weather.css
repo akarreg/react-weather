@@ -17,9 +17,12 @@
   font-size: 35px;
   line-height: 20px;
   list-style: none;
+  font-weight: 800;
+  color: black;
 }
+
 .Weather .TextDate {
-  font-size: 20px;
+  font-size: 25px;
   list-style: none;
   line-height: 35px;
   color: rgb(173, 87, 87);
@@ -27,9 +30,10 @@
 }
 
 .Weather .Description {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 20px;
   list-style: none;
+  font-weight: 400;
   color: rgb(173, 87, 87);
 }
 .Weather .Temperature {
