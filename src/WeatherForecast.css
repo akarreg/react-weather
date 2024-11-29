@@ -2,7 +2,14 @@
   text-align: center;
 }
 
-.WeatherForecastTemp-min {
+.LowTemp {
   opacity: 0.9;
   margin-left: 15px;
+}
+.HighTemp {
+  opacity: 0.4;
+  margin-left: 15px;
+}
+.Forecast-Day {
+  font-size: 300px;
 }
